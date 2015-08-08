@@ -1,5 +1,12 @@
-hlw = require('hearthstone-log-watcher');
+var robot = require("robotjs");
 
-hlw.on('game-start', function(players) {
-	console.log()
-})
+module.exports = function Player(status, health) {
+	// default condition for node.js
+	if (typeof health === 'undefined') {
+		health = 30;
+	}
+
+	this.status = status;
+	this.health = health;
+	this.cardList = [];
+}
